@@ -12,14 +12,14 @@ public class StudentGradeService {
     public DegreeDTO getMedia(StudentDTO studentDTO) {
         DegreeDTO degreeDTO = new DegreeDTO();
 
-        double mediaAluno = calculaMediaAluno(studentDTO.getDisciplinaDTO());
+        double mediaAluno = calculaMediaAluno(studentDTO.getSubject());
 
         degreeDTO.setAlunoDTO(studentDTO);
-        degreeDTO.setMediaNota(mediaAluno);
+        degreeDTO.setAverageGrade(mediaAluno);
         if(mediaAluno > 9) {
-            degreeDTO.setMensagem("Parabéns!!");
+            degreeDTO.setMessage("Parabéns!!");
         } else {
-            degreeDTO.setMensagem("...");
+            degreeDTO.setMessage("...");
         }
 
         return degreeDTO;
@@ -29,7 +29,7 @@ public class StudentGradeService {
         double somaNotas = 0;
 
         for(SubjectDTO disciplina: subjectDTOS)
-            somaNotas += disciplina.getNota();
+            somaNotas += disciplina.getGrade();
 
         return somaNotas/ subjectDTOS.size();
     }

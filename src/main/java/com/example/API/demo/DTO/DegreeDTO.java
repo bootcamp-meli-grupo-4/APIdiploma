@@ -1,31 +1,31 @@
 package com.example.API.demo.DTO;
 
 public class DegreeDTO {
-    private String mensagem;
-    private double mediaNota;
-    private StudentDTO studentDTO;
+    private String message;
+    private double averageGrade;
+    private StudentDTO student;
 
-    public String getMensagem() {
-        return mensagem;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMensagem(String mensagem) {
-        this.mensagem = mensagem;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
-    public double getMediaNota() {
-        return mediaNota;
+    public double getAverageGrade() {
+        return averageGrade;
     }
 
-    public void setMediaNota(double mediaNota) {
-        this.mediaNota = mediaNota;
+    public void setAverageGrade(double averageGrade) {
+        this.averageGrade = averageGrade;
     }
 
     private StudentDTO getAlunoDTO() {
-        return studentDTO;
+        return student;
     }
 
     public void setAlunoDTO(StudentDTO studentDTO) {
-        this.studentDTO = studentDTO;
+        this.student = studentDTO;
     }
 }

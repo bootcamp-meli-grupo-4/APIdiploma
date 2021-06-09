@@ -1,24 +1,31 @@
 package com.example.API.demo.DTO;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 public class StudentDTO {
-    private String nome;
-    private List<SubjectDTO> subjectDTO;
+    @NotNull(message = "Nome é obrigatório.")
+    @Size(min=8, max=50, message = "Mínimo de 8 caracteres e máximo de 50 caracteres.")
+    private String name;
 
-    public String getNome() {
-        return nome;
+    @NotNull(message = "Aluno deve conter lista de matérias.")
+    private List<SubjectDTO> subject;
+
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public List<SubjectDTO> getDisciplinaDTO() {
-        return subjectDTO;
+    public List<SubjectDTO> getSubject() {
+        return subject;
     }
 
-    public void setDisciplinaDTO(List<SubjectDTO> subjectDTO) {
-        this.subjectDTO = subjectDTO;
+    public void setSubject(List<SubjectDTO> subject) {
+        this.subject = subject;
     }
 }

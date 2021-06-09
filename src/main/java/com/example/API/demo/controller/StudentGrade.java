@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 public class StudentGrade {
     private StudentGradeService studentGradeService;
@@ -17,8 +19,8 @@ public class StudentGrade {
         this.studentGradeService = studentGradeService;
     }
 
-    @PostMapping("/mediaAluno")
-    public ResponseEntity<DegreeDTO> getMediaAluno(@RequestBody StudentDTO studentDTO) {
+    @PostMapping("/analyzeNotes")
+    public ResponseEntity<DegreeDTO> getMediaAluno(@RequestBody @Valid StudentDTO studentDTO) {
         return new ResponseEntity<>(studentGradeService.getMedia(studentDTO), HttpStatus.CREATED);
     }
 }
