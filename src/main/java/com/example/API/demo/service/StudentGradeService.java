@@ -4,7 +4,6 @@ import com.example.API.demo.DTO.StudentDTO;
 import com.example.API.demo.DTO.DegreeDTO;
 import com.example.API.demo.DTO.SubjectDTO;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -29,7 +28,7 @@ public class StudentGradeService {
         double somaNotas = 0;
 
         for(SubjectDTO disciplina: subjectDTOS)
-            somaNotas += disciplina.getGrade();
+            somaNotas += Double.parseDouble(disciplina.getGrade());
 
         return somaNotas/ subjectDTOS.size();
     }

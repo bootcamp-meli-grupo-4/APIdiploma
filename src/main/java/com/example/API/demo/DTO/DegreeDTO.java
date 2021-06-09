@@ -1,8 +1,12 @@
 package com.example.API.demo.DTO;
 
+import javax.validation.Valid;
+
 public class DegreeDTO {
     private String message;
     private double averageGrade;
+
+    @Valid
     private StudentDTO student;
 
     public String getMessage() {
