@@ -13,7 +13,7 @@ public class StudentGradeService {
 
         double mediaAluno = calculaMediaAluno(studentDTO.getSubject());
 
-        degreeDTO.setAlunoDTO(studentDTO);
+        degreeDTO.setStudent(studentDTO);
         degreeDTO.setAverageGrade(mediaAluno);
         if(mediaAluno > 9) {
             degreeDTO.setMessage("Parabéns!!");

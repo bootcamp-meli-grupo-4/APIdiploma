@@ -25,11 +25,11 @@ public class DegreeDTO {
         this.averageGrade = averageGrade;
     }
 
-    private StudentDTO getAlunoDTO() {
+    public StudentDTO getStudent() {
         return student;
     }
 
-    public void setAlunoDTO(StudentDTO studentDTO) {
-        this.student = studentDTO;
+    public void setStudent(StudentDTO student) {
+        this.student = student;
     }
 }
