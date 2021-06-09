@@ -1,6 +1,6 @@
 package com.example.API.demo.DTO;
 
-public class DisciplinaDTO {
+public class SubjectDTO {
     private String nome;
     private double nota;
 

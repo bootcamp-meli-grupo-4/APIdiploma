@@ -1,9 +1,9 @@
 package com.example.API.demo.DTO;
 
-public class DiplomaDTO {
+public class DegreeDTO {
     private String mensagem;
     private double mediaNota;
-    private AlunoDTO alunoDTO;
+    private StudentDTO studentDTO;
 
     public String getMensagem() {
         return mensagem;
@@ -21,11 +21,11 @@ public class DiplomaDTO {
         this.mediaNota = mediaNota;
     }
 
-    private AlunoDTO getAlunoDTO() {
-        return alunoDTO;
+    private StudentDTO getAlunoDTO() {
+        return studentDTO;
     }
 
-    public void setAlunoDTO(AlunoDTO alunoDTO) {
-        this.alunoDTO = alunoDTO;
+    public void setAlunoDTO(StudentDTO studentDTO) {
+        this.studentDTO = studentDTO;
     }
 }
