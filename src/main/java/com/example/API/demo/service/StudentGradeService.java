@@ -15,7 +15,11 @@ public class StudentGradeService {
 
         degreeDTO.setStudent(studentDTO);
         degreeDTO.setAverageGrade(mediaAluno);
-        withHonors(mediaAluno,degreeDTO);
+        if(mediaAluno > 9) {
+            degreeDTO.setMessage("Parabéns!!");
+        } else {
+            degreeDTO.setMessage("Sua média foi: " + mediaAluno);
+        }
 
         return degreeDTO;
     }
@@ -27,13 +31,5 @@ public class StudentGradeService {
             somaNotas += Double.parseDouble(disciplina.getGrade());
 
         return somaNotas/ subjectDTOS.size();
-    }
-
-    private void withHonors(double media, DegreeDTO degreeDTO) {
-        if(media > 9) {
-            degreeDTO.setMessage("Parabéns!!");
-        } else {
-            degreeDTO.setMessage("Sua média foi: " + media);
-        }
     }
 }

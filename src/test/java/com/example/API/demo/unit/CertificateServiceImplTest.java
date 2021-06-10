@@ -1,5 +1,6 @@
 package com.example.API.demo.unit;
 
+import com.example.API.demo.DTO.DegreeDTO;
 import com.example.API.demo.DTO.StudentDTO;
 import com.example.API.demo.DTO.SubjectDTO;
 import com.example.API.demo.service.StudentGradeService;
@@ -18,7 +19,7 @@ public class CertificateServiceImplTest {
     }
 
     @Test
-    public void ShoukdCalculateAveerageGrade() {
+    public void shoukdCalculateAveerageGrade() {
         //arrange
         List<SubjectDTO> subjects = new LinkedList<>();
 
@@ -32,5 +33,33 @@ public class CertificateServiceImplTest {
 
         //assert
         Assertions.assertEquals(media ,7.5);
+    }
+
+    @Test
+    public void shouldReturnDegreeWithCongratulations() {
+        List<SubjectDTO> subjects = new LinkedList<>();
+
+        subjects.add(new SubjectDTO("biologia","10"));
+        subjects.add(new SubjectDTO("portugues","10"));
+
+        StudentDTO student = new StudentDTO("testeDiploma",subjects);
+
+        DegreeDTO degreeDTO = studentGradeService.getMedia(student);
+
+        Assertions.assertEquals(degreeDTO.getMessage(),"Parabéns!!");
+    }
+
+    @Test
+    public void shouldReturnDegreeWithOutCongratulations() {
+        List<SubjectDTO> subjects = new LinkedList<>();
+
+        subjects.add(new SubjectDTO("biologia","8"));
+        subjects.add(new SubjectDTO("portugues","10"));
+
+        StudentDTO student = new StudentDTO("testeDiploma",subjects);
+
+        DegreeDTO degreeDTO = studentGradeService.getMedia(student);
+
+        Assertions.assertEquals(degreeDTO.getMessage(),"Sua média foi: 9.0");
     }
 }
