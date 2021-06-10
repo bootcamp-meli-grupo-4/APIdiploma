@@ -13,6 +13,11 @@ public class SubjectDTO {
     @Pattern(regexp = "[0-9]+$", message = "A nota deve conter apenas numeros")
     private String grade;
 
+    public SubjectDTO(String name, String grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+
     public String getName() {
         return name;
     }

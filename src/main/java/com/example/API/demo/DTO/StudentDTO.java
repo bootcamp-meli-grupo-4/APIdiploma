@@ -16,6 +16,11 @@ public class StudentDTO {
     @NotNull(message = "Aluno deve conter lista de matérias.")
     private List<SubjectDTO> subject;
 
+    public StudentDTO(String name, List<SubjectDTO> subject) {
+        this.name = name;
+        this.subject = subject;
+    }
+
     public String getName() {
         return name;
     }
